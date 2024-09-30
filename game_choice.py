@@ -43,16 +43,21 @@ def final():
     finish = False
 
     while finish == False:
+        print ("")
+        print ("----------------------------------------------")
         print ("Would you like to play another game?")
         again = input()
         again = again.lower()
 
 
         if again == "yes":
+            print ("")
             print ("Sure! Choose a game: ")
             choices()
 
         elif again == "no":
+            print ("")
+            print ("------------------------------")
             print ("Thanks for playing on Ibi's Game Centre! ")
             finish = True
        
