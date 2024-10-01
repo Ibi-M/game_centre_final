@@ -4,7 +4,7 @@ from subprocess import call
 
 def open_py_file():
     choose = int(input())
-    
+        
     if choose == 1:
         call(["python", "hangman.py"])
 

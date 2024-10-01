@@ -30,7 +30,7 @@ limit = 20
 lives = 3
 finish = True
 guess = int(input("Enter any number between 1 and 20: "))
-print (number)
+
 while lives != 0 or finish == True:
     if guess > 20:
         print ("You have entered a value above 20, therefore the game ends!")
