@@ -5,7 +5,7 @@
 - [ ] Rock, Paper, Scissors
 - [ ] Noughts and Crosses
 - [ ] Guess the Number
-- [ ]Card Game
+- [ ] Card Game
 
 
 > [!note]
