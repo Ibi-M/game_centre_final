@@ -10,12 +10,17 @@ class color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
    
-p1 = color.RED + "O" +color.END
+p1 = color.RED + "O" + color.END
 p2 = color.BLUE + "O" + color.END
+
+
 
 players = [p1,p2]
 row1 = ""
 row2 = ""
+
+rows = 6
+columns = 5
 
 players_row = [row1,row2]
 
@@ -75,4 +80,3 @@ while end == False:
         print("Column is full! Try a different column.")
 
     turns()  
-
