@@ -125,6 +125,10 @@ while finish == False:
         print ("Please enter in lowercase, not Caps")
         print ("")
         guess = input("Guess a letter:")
+    
+    while len(guess) != 1:
+        print ("You can only enter ONE letter; not a word/phrase")
+        guess = input("Guess a letter")
         
     used.append(guess)  
     

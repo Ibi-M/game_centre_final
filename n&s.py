@@ -27,9 +27,9 @@ turns()
 print ("")
 
 
-
 p1 = color.RED + "O" + color.END
 p2 = color.BLUE +"X" + color.END
+
 
 def check1():
     global confirm

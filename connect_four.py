@@ -19,8 +19,8 @@ players = [p1,p2]
 row1 = ""
 row2 = ""
 
-rows = 6
-columns = 5
+rows = 5
+columns = [1,2,3,4,5,6]
 
 players_row = [row1,row2]
 
@@ -43,14 +43,29 @@ def turns():
     print ((color.GREEN + color.BOLD), "5", color.END,("["+game[4][0]+"]"), ("["+game[4][1]+"]"), ("["+game[4][2]+"]"), ("["+game[4][3]+"]"), ("["+game[4][4]+"]"), ("["+game[4][5]+"]"),("["+game[4][6]+"]"))
     print ((color.GREEN + color.BOLD), "6", color.END,("["+game[5][0]+"]"), ("["+game[5][1]+"]"), ("["+game[5][2]+"]"), ("["+game[5][3]+"]"), ("["+game[5][4]+"]"), ("["+game[5][5]+"]"),("["+game[5][6]+"]"))
 
+
+
+   
+
 print("Welcome to Connect Four!")
 print("Player 1 will be RED and Player 2 will be BLUE")
 
-
 end = False
 while end == False:
-    print("Player 1: Choose a column (1-7)")
-    row1 = int(input()) - 1  
+    fine = False
+
+    while fine != True:
+        try:
+            print("Player 1: Choose a column (1-7)")
+            row1 = int(input()) - 1  
+            if row1 > 6:
+                print ("You have entered outside the range!")
+                print ("")
+            else:
+                fine = True
+        except ValueError:
+            print ("Only input a number for a row, not a string!")
+            print ("")
 
 
     placed = False
@@ -65,11 +80,32 @@ while end == False:
 
     turns() 
 
-    print("Player 2: Choose a column (1-7)")
-    row2 = int(input()) - 1  
+    if game[i][row1] and game[i-1][row1] and game[i-2][row1] and game[i-3][row1] == p1:
+        print ("You have won!")
+        end = True
+    
+    if row1 == 1 or 2 or 3 or 4:
+        for c in columns:
+            if game[c][row1] and game[c][row1 + 1] and game[c][row1+ 2] and game[c][row1 + 3] == p1:
+                print ("You have won!")
 
+    fine = False
+
+    while fine != True:
+        try:
+            print("Player 2: Choose a column (1-7)")
+            row2 = int(input()) - 1  
+            if row2 > 6:
+                print ("You have entered outside the range!")
+                print ("")
+            else:
+                fine = True
+        except ValueError:
+            print ("Only input a number for a row, not a string!")
+            print ("")
     
     placed = False
+
     for i in range(5, -1, -1):
         if game[i][row2] == value:
             game[i][row2] = p2  
@@ -79,4 +115,8 @@ while end == False:
     if placed == False:
         print("Column is full! Try a different column.")
 
-    turns()  
+    turns() 
+
+    if game[i][row2] and game[i-1][row2] and game[i-2][row2] and game[i-3][row2] == p2:
+        print ("You have won!")
+        end = True
