@@ -13,6 +13,9 @@ class color:
 p1 = color.RED + "O" + color.END
 p2 = color.BLUE + "O" + color.END
 
+winp1 = color.BOLD + color.RED + "O" + color.END
+winp2 = color.BOLD + color.BLUE + "O" + color.END
+
 
 
 players = [p1,p2]
@@ -23,6 +26,7 @@ rows = 5
 columns = [0,1,2,3,4,5]
 
 players_row = [row1,row2]
+players = ["Player 1", "Player 2"]
 
 value = " "
 
@@ -43,9 +47,26 @@ def turns():
     print ((color.GREEN + color.BOLD), "5", color.END,("["+game[4][0]+"]"), ("["+game[4][1]+"]"), ("["+game[4][2]+"]"), ("["+game[4][3]+"]"), ("["+game[4][4]+"]"), ("["+game[4][5]+"]"),("["+game[4][6]+"]"))
     print ((color.GREEN + color.BOLD), "6", color.END,("["+game[5][0]+"]"), ("["+game[5][1]+"]"), ("["+game[5][2]+"]"), ("["+game[5][3]+"]"), ("["+game[5][4]+"]"), ("["+game[5][5]+"]"),("["+game[5][6]+"]"))
 
+def choice(check):
+    if check == p1:
+        print ("Player 1 wins!")
+    elif check == p2:
+        print ("Player 2 wins!")
 
+def win(p):
+    check = p
 
-   
+    #Vertical
+    for r in range(6):
+        for c in range(4):
+            if game[r][c] == p and game[r][c + 1] == p and game[r][c + 2] == p and game[r][c + 3] == p:
+                choice(check)
+
+    #Horizontal
+    for c in range(7):
+        for r in range(3):
+            if game[r][c] == p and game[r + 1][c] == p and game[r + 2][c] == p and game[r + 3][c] == p:
+                choice(check)
 
 print("Welcome to Connect Four!")
 print("Player 1 will be RED and Player 2 will be BLUE")
@@ -79,28 +100,7 @@ while end == False:
         print("Column is full! Try a different column.")
 
     turns() 
-
-# -----------------------------------PLAYER 1 WINNING CODE STARTS HERE-------------------------------------------------------#
-
-#---------------VERTICAL WINNING---------------#
-    if i >= 3:
-        if game[i][row1] == p1 and game[i-1][row1] == p1 and game[i-2][row1] == p1 and game[i-3][row1] == p1:
-            print ("Player 1 wins!")
-            end = True
-
-    elif i <= 3:
-        if game[i][row1] == p1 and game[i+1][row1] == p1 and game[i+2][row1] == p1 and game[i+3][row1] == p1:
-            print ("Player 1 wins!")
-            end = True
-#---------------HORIZONTAL WINNING---------------#
-    r = 0
-    
-    position = [pos1,pos2,pos3,pos4,pos5,pos6]
-    index = 0
-
-    for c in columns:
-        if game[c][position[index]] == p1 and game[c][r+1] == p1 and game[c][r+2] == p1 and game[c][r+3] == p1
-# ------------------------------------------------------------------------------------------------------------------------#
+    win(p1)
 
     fine = False
 
@@ -129,19 +129,4 @@ while end == False:
         print("Column is full! Try a different column.")
 
     turns() 
-
-# -----------------------------------PLAYER 2 WINNING CODE STARTS HERE-------------------------------------------------------#
-
-#---------------VERTICAL WINNING---------------#
-    if i >= 3:
-        if game[i][row2] == p2 and game[i-1][row2] == p2 and game[i-2][row2] == p2 and game[i-3][row2] == p2:
-            print ("Player 1 wins!")
-            end = True
-
-    elif i <= 3:
-        if game[i][row2] == p2 and game[i+1][row2] == p2 and game[i+2][row2] == p2 and game[i+3][row2] == p2:
-            print ("Player 1 wins!")
-            end = True
-
-
-# -----------------------------------------------------------------------------#
+    win(p2)

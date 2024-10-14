@@ -15,6 +15,8 @@ game = [[".", ".", "."],
         [".", ".", "."],
         [".", ".", "."]]
 
+rows = [0,1,2]
+
 stop = False
 
 def turns():
@@ -73,8 +75,26 @@ def player2():
     global column2
     print (stop)
     print ("Player 2, Input your input")
-    row2 = int(input("What row would you want your input (0,1 or 2)?"))
-    column2 = int(input("What column would you want your input (0,1 or 2)?"))
+    fine1 = False
+    fine2 = False
+
+    while fine1 == False and fine2 == False:
+
+        try:
+            row2 = int(input("What row would you want your input (0,1 or 2)?"))
+            if row2 not in rows:
+                fine1 = False
+            else:
+                fine1 = True
+
+            column2 = int(input("What row would you want your input (0,1 or 2)?"))
+            if column2 not in rows:
+                fine2 = False
+            else:
+                fine2 = True
+        except ValueError:
+            print ("Invalid!")
+
     check2()
     print ("")
     game [row2][column2] = p2

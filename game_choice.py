@@ -20,6 +20,9 @@ def open_py_file():
     elif choose == 5:
         call(["python",  "card_game.py" ])   
     
+    elif choose == 6:
+        call(["python", "connect_four.py "])
+    
     else:
         print ("Invalid!")
     
