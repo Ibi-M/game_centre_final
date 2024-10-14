@@ -80,17 +80,19 @@ while end == False:
 
     turns() 
 
-# -----------------------------------------------------------------------#
+# -----------------------------------PLAYER 1 WINNING CODE STARTS HERE-------------------------------------------------------#
+
+#---------------VERTICAL WINNING---------------#
     if i >= 3:
         if game[i][row1] == p1 and game[i-1][row1] == p1 and game[i-2][row1] == p1 and game[i-3][row1] == p1:
-            print ("You have won!")
+            print ("Player 1 wins!")
             end = True
 
     elif i <= 3:
         if game[i][row1] == p1 and game[i+1][row1] == p1 and game[i+2][row1] == p1 and game[i+3][row1] == p1:
-            print ("You have won!")
+            print ("Player 1 wins!")
             end = True
-# -----------------------------------------------------------------------------#
+# ------------------------------------------------------------------------------------------------------------------------#
 
     fine = False
 
@@ -120,6 +122,18 @@ while end == False:
 
     turns() 
 
-    if game[i][row2] and game[i-1][row2] and game[i-2][row2] and game[i-3][row2] == p2:
-        print ("You have won! 2")
-        end = True
+# -----------------------------------PLAYER 2 WINNING CODE STARTS HERE-------------------------------------------------------#
+
+#---------------VERTICAL WINNING---------------#
+    if i >= 3:
+        if game[i][row2] == p2 and game[i-1][row2] == p2 and game[i-2][row2] == p2 and game[i-3][row2] == p2:
+            print ("Player 1 wins!")
+            end = True
+
+    elif i <= 3:
+        if game[i][row2] == p2 and game[i+1][row2] == p2 and game[i+2][row2] == p2 and game[i+3][row2] == p2:
+            print ("Player 1 wins!")
+            end = True
+
+
+# -----------------------------------------------------------------------------#
