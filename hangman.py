@@ -79,6 +79,19 @@ def wrong8():
     print (color.BOLD + "|" + color.RED+ "       |  " + color.END)
     print (color.BOLD + "|" + color.RED+ "      / \ " + color.END)
 
+def valid_guess(guess, used):
+
+    if len(guess) != 1 or guess.isalpha() == False:
+        print("Invalid input! Please enter a single letter (a-z).")
+        print ("")
+        return False
+
+    if guess in used:
+        print("You've already tried this letter. Choose another.")
+        print ("")
+        return False
+    return True
+
 
 print ("You are going to play Hangman...")
 print ("")
@@ -108,28 +121,12 @@ while finish == False:
     print ("")
     print ("Used Letters", used)
     guess = input("Guess a letter: ")
-    
-    
-    while guess in used:
-        print("Choose another letter, you've already tried this letter...")
-        print(" ")
+
+    guess = guess.lower()
+    while valid_guess(guess,used) == False:
         guess = input("Guess a letter")
-        print(" ")
-        
-    while guess.isdigit():
-        print ("Please enter a letter, not a number.")
-        print ("")
-        guess = input("Guess a letter")
-        
-    while guess.isupper():
-        print ("Please enter in lowercase, not Caps")
-        print ("")
-        guess = input("Guess a letter:")
+
     
-    while len(guess) != 1:
-        print ("You can only enter ONE letter; not a word/phrase")
-        guess = input("Guess a letter")
-        
     used.append(guess)  
     
     if guess in word:
