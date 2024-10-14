@@ -80,14 +80,17 @@ while end == False:
 
     turns() 
 
-    if game[i][row1] and game[i-1][row1] and game[i-2][row1] and game[i-3][row1] == p1:
-        print ("You have won!")
-        end = True
-    
-    if row1 == 1 or 2 or 3 or 4:
-        for c in columns:
-            if game[c][row1] and game[c][row1 + 1] and game[c][row1+ 2] and game[c][row1 + 3] == p1:
-                print ("You have won!")
+# -----------------------------------------------------------------------#
+    if i >= 3:
+        if game[i][row1] == p1 and game[i-1][row1] == p1 and game[i-2][row1] == p1 and game[i-3][row1] == p1:
+            print ("You have won!")
+            end = True
+
+    elif i <= 3:
+        if game[i][row1] == p1 and game[i+1][row1] == p1 and game[i+2][row1] == p1 and game[i+3][row1] == p1:
+            print ("You have won!")
+            end = True
+# -----------------------------------------------------------------------------#
 
     fine = False
 
@@ -118,5 +121,5 @@ while end == False:
     turns() 
 
     if game[i][row2] and game[i-1][row2] and game[i-2][row2] and game[i-3][row2] == p2:
-        print ("You have won!")
+        print ("You have won! 2")
         end = True
