@@ -20,7 +20,7 @@ row1 = ""
 row2 = ""
 
 rows = 5
-columns = [1,2,3,4,5,6]
+columns = [0,1,2,3,4,5]
 
 players_row = [row1,row2]
 
@@ -92,6 +92,14 @@ while end == False:
         if game[i][row1] == p1 and game[i+1][row1] == p1 and game[i+2][row1] == p1 and game[i+3][row1] == p1:
             print ("Player 1 wins!")
             end = True
+#---------------HORIZONTAL WINNING---------------#
+    r = 0
+    
+    position = [pos1,pos2,pos3,pos4,pos5,pos6]
+    index = 0
+
+    for c in columns:
+        if game[c][position[index]] == p1 and game[c][r+1] == p1 and game[c][r+2] == p1 and game[c][r+3] == p1
 # ------------------------------------------------------------------------------------------------------------------------#
 
     fine = False
