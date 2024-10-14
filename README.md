@@ -1,4 +1,4 @@
-### This game centre involves 5 games:
+### This game centre involves 6 games:
 ## This is a smaller heading
 
 - [ ] Hangman
