@@ -1,6 +1,21 @@
 import random
 import time
-        
+
+def get_guess():
+    global guess
+    while True:
+        try:
+            guess = int(input("Enter any number between 1 and 20: "))
+            print ("")
+            if 1 <= guess <= 20:
+                return guess
+            else:
+                print("Please enter a number between 1 and 20.")
+                print ("")
+        except ValueError:
+            print("Invalid input! Please enter an integer.")
+            print ("")
+
 print ("Let's play a quick game of Guess the Number!")
 time.sleep(0.5)
 print ("")
@@ -27,9 +42,9 @@ print ("Let's Play!")
     
 number = random.randrange(1,20)
 limit = 20
-lives = 3
+lives = 2
 finish = True
-guess = int(input("Enter any number between 1 and 20: "))
+get_guess()
 
 while lives != 0 or finish == True:
     if guess > 20:
@@ -40,7 +55,8 @@ while lives != 0 or finish == True:
         lives = lives - 1
         print ("")
         print("Too low!")
-        guess = int(input("Enter number again: "))
+        print ("Enter number again: ")
+        get_guess()
         print ("")
         if lives == 0:
             print ("Game Over!")
@@ -54,7 +70,8 @@ while lives != 0 or finish == True:
         lives = lives - 1
         print ("")
         print("Too high!")
-        guess = int(input("Enter number again: "))
+        print ("Enter number again: ")
+        get_guess()
         print ("")
         if lives == 0:
             print ("Game Over!")

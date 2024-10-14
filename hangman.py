@@ -119,14 +119,13 @@ while finish == False:
     time.sleep(1)
     print((color.YELLOW + color.BOLD + color.UNDERLINE) + "Guess:",round,"" + color.END)
     print ("")
-    print ("Used Letters", used)
+    print (f"Used Letters {used}")
     guess = input("Guess a letter: ")
 
     guess = guess.lower()
     while valid_guess(guess,used) == False:
         guess = input("Guess a letter")
 
-    
     used.append(guess)  
     
     if guess in word:
@@ -150,6 +149,7 @@ while finish == False:
     print (so_far)
     print ("")
     confirm = False
+
     if wrong == 0:
         wrong1()
     elif wrong == 1:
@@ -184,4 +184,4 @@ while finish == False:
         left = max_guesses - guesses
         if left <0:
             left = 0
-        print ("You have guessed the word correctly in", guesses, "guesses")
+        print (f"You have guessed the word correctly in {guesses} guesses")

@@ -1,104 +1,28 @@
-class color:
-    PURPLE = '\033[95m'
-    CYAN = '\033[96m'
-    DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    END = '\033[0m'
-    
-
-game = [[".", ".", "."],
-        [".", ".", "."],
-        [".", ".", "."]]
-
-rows = [0,1,2]
-
-stop = False
-
 def turns():
-    print ((color.CYAN + color.BOLD), "   0 1 2", color.END)
-    print ((color.GREEN + color.BOLD), "0", color.END, game[0][0], game[0][1], game[0][2])
-    print ((color.GREEN + color.BOLD), "1", color.END, game[1][0], game[1][1], game[1][2])
-    print ((color.GREEN + color.BOLD), "2", color.END, game[2][0], game[2][1], game[2][2])
+    print((color.CYAN + color.BOLD), "   0 1 2", color.END)
+    print((color.GREEN + color.BOLD), "0", color.END, game[0][0], game[0][1], game[0][2])
+    print((color.GREEN + color.BOLD), "1", color.END, game[1][0], game[1][1], game[1][2])
+    print((color.GREEN + color.BOLD), "2", color.END, game[2][0], game[2][1], game[2][2])
+    print ("-----------------------------------------")
 
-turns()
-print ("")
-
-
-p1 = color.RED + "O" + color.END
-p2 = color.BLUE +"X" + color.END
-
-
-def check1():
-    global confirm
-    confirm = False
-    while confirm != True:
-        if game[row1][column1] != ".":
-            confirm = False
-            print ("You cannot do that move!")
-            print ("")
-            player1()
-        else:
-            confirm = True
-            
-
-def check2():
-    global confirm
-    confirm = False
-    while confirm != True:
-        if game[row2][column2] != ".":
-            confirm = False
-            print ("You cannot do that move!")
-            print ("")
-            player2()
-        else:
-            confirm = True
-            
-            
-def player1():
-    global row1
-    global column1
-    print (stop)
-    print ("Player 1, Input your input")
-    row1 = int(input("What row would you want your input (0,1 or 2)?"))
-    column1 = int(input("What column would you want your input (0,1 or 2)?"))    
-    check1()
-    print ("")
-    game [row1][column1] = p1
-
-def player2():
-    global row2
-    global column2
-    print (stop)
-    print ("Player 2, Input your input")
-    fine1 = False
-    fine2 = False
-
-    while fine1 == False and fine2 == False:
-
+def player_move(player_number, symbol):
+    print(color.YELLOW + color.UNDERLINE +"Player " + player_number + color.END + ": Input your input")
+    
+    while True:
         try:
-            row2 = int(input("What row would you want your input (0,1 or 2)?"))
-            if row2 not in rows:
-                fine1 = False
+            print ("")
+            row = int(input("What row would you want your input (0, 1, or 2)? "))
+            column = int(input("What column would you want your input (0, 1, or 2)? "))
+            print ("")
+            if row in rows and column in rows and game[row][column] == ".":
+                game[row][column] = symbol
+                break
             else:
-                fine1 = True
-
-            column2 = int(input("What row would you want your input (0,1 or 2)?"))
-            if column2 not in rows:
-                fine2 = False
-            else:
-                fine2 = True
+                print(color.RED + "Invalid move! Try again." + color.END)
+                print ("")
         except ValueError:
-            print ("Invalid!")
-
-    check2()
-    print ("")
-    game [row2][column2] = p2
-
+            print(color.RED + "Please enter valid integers." + color.END)
+            print ("")
 
 def win():
     global stop
@@ -156,28 +80,51 @@ def win():
         
     return stop   
 
+class color:
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
+
+
+game = [[".", ".", "."],
+        [".", ".", "."],
+        [".", ".", "."]]
+
+rows = [0, 1, 2]
+
+stop = False
+
+
+turns()
+print("")
+
+p1 = color.RED + "O" + color.END
+p2 = color.BLUE + "X" + color.END
+
+
+
 while stop == False:
-    player1()
+    player_move("1", p1)
     turns()
     win()    
-    if stop == True:
-        print ("")
-        print ("You have won!")
+    if stop:
+        print("")
+        print("Player 1 has won!")
         break
-    else:
-        print ("")
 
-    print ("")
-    player2()
+    player_move("2", p2)
     turns()
     win()
-            
-    if stop == True:
-        print ("")
-        print ("You have won!")
+    if stop:
+        print("")
+        print("Player 2 has won!")
         break
-    else:
-        print ("")
-        
-    print("")
-    
+
+print("Game Over!")
