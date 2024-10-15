@@ -50,40 +50,39 @@ def turns():
 def choice(check):
     if check == p1:
         print ("Player 1 wins!")
-        end = True
     elif check == p2:
         print ("Player 2 wins!")
-        end = True
-    return end
+
         
 
 def win(p):
     check = p
 
-    #Vertical
     for r in range(6):
         for c in range(4):
             if game[r][c] == p and game[r][c + 1] == p and game[r][c + 2] == p and game[r][c + 3] == p:
                 choice(check)
-
-    #Horizontal
+                return True
+ 
     for c in range(7):
         for r in range(3):
             if game[r][c] == p and game[r + 1][c] == p and game[r + 2][c] == p and game[r + 3][c] == p:
                 choice(check)
+                return True
     
-
-   
     for r in range(3):
         for c in range(4):
             if game[r][c] == p and game[r + 1][c + 1] == p and game[r + 2][c + 2] == p and game[r + 3][c + 3] == p:
                 choice(check)
+                return True
 
 
     for r in range(3, 6):
         for c in range(4):
             if game[r][c] == p and game[r - 1][c + 1] == p and game[r - 2][c + 2] == p and game[r - 3][c + 3] == p:
                 choice(check)
+                return True
+    return False
 
 print("Welcome to Connect Four!")
 print("Player 1 will be RED and Player 2 will be BLUE")
@@ -102,7 +101,7 @@ while end == False:
             else:
                 fine = True
         except ValueError:
-            print (color.RED + "Only input a number for a row, not a string!" + color.RED)
+            print (color.RED + "Only input a number for a row, not a string!" + color.END)
             print ("")
 
 
@@ -119,6 +118,9 @@ while end == False:
     turns() 
     win(p1)
 
+    if win (p1) == True:
+        break
+
     fine = False
 
     while fine != True:
@@ -126,12 +128,12 @@ while end == False:
             print("Player 2: Choose a column (1-7)")
             row2 = int(input()) - 1  
             if row2 > 6:
-                print ("You have entered outside the range!")
+                print (color.RED + "You have entered outside the range!" + color.END)
                 print ("")
             else:
                 fine = True
         except ValueError:
-            print ("Only input a number for a row, not a string!")
+            print (color.RED + "Only input a number for a row, not a string!" + color.END)
             print ("")
     
     placed = False
@@ -143,7 +145,9 @@ while end == False:
             break
 
     if placed == False:
-        print("Column is full! Try a different column.")
+        print(color.RED + "Column is full! Try a different column." + color.END)
 
     turns() 
     win(p2)
+    if win(p2) == True:
+        break
