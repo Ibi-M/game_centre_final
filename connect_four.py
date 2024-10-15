@@ -50,8 +50,12 @@ def turns():
 def choice(check):
     if check == p1:
         print ("Player 1 wins!")
+        end = True
     elif check == p2:
         print ("Player 2 wins!")
+        end = True
+    return end
+        
 
 def win(p):
     check = p
@@ -67,6 +71,19 @@ def win(p):
         for r in range(3):
             if game[r][c] == p and game[r + 1][c] == p and game[r + 2][c] == p and game[r + 3][c] == p:
                 choice(check)
+    
+
+   
+    for r in range(3):
+        for c in range(4):
+            if game[r][c] == p and game[r + 1][c + 1] == p and game[r + 2][c + 2] == p and game[r + 3][c + 3] == p:
+                choice(check)
+
+
+    for r in range(3, 6):
+        for c in range(4):
+            if game[r][c] == p and game[r - 1][c + 1] == p and game[r - 2][c + 2] == p and game[r - 3][c + 3] == p:
+                choice(check)
 
 print("Welcome to Connect Four!")
 print("Player 1 will be RED and Player 2 will be BLUE")
@@ -80,12 +97,12 @@ while end == False:
             print("Player 1: Choose a column (1-7)")
             row1 = int(input()) - 1  
             if row1 > 6:
-                print ("You have entered outside the range!")
+                print (color.RED + "You have entered outside the range!" + color.END)
                 print ("")
             else:
                 fine = True
         except ValueError:
-            print ("Only input a number for a row, not a string!")
+            print (color.RED + "Only input a number for a row, not a string!" + color.RED)
             print ("")
 
 
