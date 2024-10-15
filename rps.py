@@ -1,6 +1,10 @@
 import random
 import time
 
+class color:
+    RED = '\033[91m'
+    END = '\033[0m'
+     
 ("You are going to play Rock, Paper, Scissors with 3 rounds")
 rounds = 3
 turns = ["first", "second", "final"]
@@ -35,7 +39,7 @@ while rounds != 0:
                 ok = True
     
         else:
-            print ("You have entered an invalid input")
+            print (color.RED + "You have entered an invalid input" + color.END)
             ok = False
             
     options = ["Rock", "Paper", "Scissors"]
