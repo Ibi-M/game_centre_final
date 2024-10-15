@@ -16,7 +16,7 @@ class color:
     
 def wrong1():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
@@ -24,65 +24,65 @@ def wrong1():
 
 def wrong2():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN +  "       O" + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
 
 def wrong3():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       | " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       | " + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
 
 def wrong4():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /| " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /| " + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
 
 def wrong5():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /|\ " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /|\ " + color.END)
     print (color.BOLD + "|" + color.END)
     print (color.BOLD + "|" + color.END)
 
 
 def wrong6():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /|\ " + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |  " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /|\ " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |  " + color.END)
     print (color.BOLD + "|" + color.END)
 
 def wrong7():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /|\ " + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |  " + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /  " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /|\ " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |  " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /  " + color.END)
 
 def wrong8():
     print (color.BOLD + "---------" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |" + color.END)
-    print (color.BOLD + "|" + color.RED+ "       O" + color.END)
-    print (color.BOLD + "|" + color.RED+ "      /|\ " + color.END)
-    print (color.BOLD + "|" + color.RED+ "       |  " + color.END)
-    print (color.BOLD + "|" + color.RED+ "      / \ " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       O" + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      /|\ " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "       |  " + color.END)
+    print (color.BOLD + "|" + color.CYAN + "      / \ " + color.END)
 
 def valid_guess(guess, used):
 
     if len(guess) != 1 or guess.isalpha() == False:
-        print("Invalid input! Please enter a single letter (a-z).")
+        print(color.RED + "Invalid input! Please enter a single letter (a-z)." + color.END)
         print ("")
         return False
 
