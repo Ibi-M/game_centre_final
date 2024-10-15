@@ -16,14 +16,34 @@ class color:
 
 ticket = [["*", "*", "*"],["*", "*", "*"] ,["*", "*", "*"]]
 
+t1 = color.RED + ticket[0][0] + color.END
+t2 = color.GREEN + ticket[0][1] + color.END
+t3 = color.YELLOW + ticket[0][2] + color.END
+t4 = color.YELLOW + ticket[0][2] + color.END
+t5 = color.CYAN + ticket[0][2] + color.END
+t6 = color.PURPLE + ticket[0][2] + color.END
+t7 = color.BLUE + ticket[0][2] + color.END
+t8 = color.RED + ticket[0][2] + color.END
+t9 = color.DARKCYAN + ticket[0][2] + color.END
 
-print ("_________________")
-print ("|",  ticket[0][0], " | ", ticket[0][1], " | ",ticket[0][2]," |")
-print ("|____|_____|_____|")
-print ("|", ticket[1][0], " | ", ticket[1][1], " | ", ticket[1][2]," |")
-print ("|____|_____|_____|")
-print ("|", ticket[2][0], " | ", ticket[2][1], " | ", ticket[2][2]," |")
-print ("|____|_____|_____|")
+table = [[t1,t2,t3],
+         [t4,t5,t6],
+         [t7,t8,t9]]
+
+
+col1_width = 3
+col2_width = 3 
+col3_width = 3  
+
+
+for item in table:
+    col1_text = item[0].center(col1_width)
+    col2_text = item[1].center(col2_width)
+    col3_text = item[2].center(col3_width)
+    
+    print("|-  ", col1_text, "  -|-  ", col2_text, "  -|-  ", col3_text, "  -|")
+
+print(color.END)
 
 
 
