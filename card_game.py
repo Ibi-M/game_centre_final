@@ -26,6 +26,20 @@ def info():
   print ("- 's' for the same")
   time.sleep(1)
 
+def valid_predict(card_number):
+    answers = ["h", "l", "s"]
+    prompt_message = f"Do you think the {card_number} card is higher, lower or the same value? Type your answer: "
+    info()
+    predict = input(prompt_message).strip().lower()
+   
+    while predict not in answers:
+        print("\nInvalid Answer!")
+        info()
+        predict = input(prompt_message).strip().lower()
+   
+    return predict
+
+
 print ("Hello! Welcome to this Card Game!")
 time.sleep (1)
 print ("")
@@ -104,16 +118,8 @@ while round != 0:
       print("")
       time.sleep(1)
       print ("")
-      print ("Do you think the second card is higher, lower or the same value?")
-      info()
 
-      predict2 = input("Type your answer:")
-      while predict2 not in answers:
-        print ("Invalid Answer!")
-        print ("")
-        info()
-        print ("")
-        predict2 = input("Type your answer:")
+      predict2 = valid_predict("second")
 
       print ("")
       print ("The next card is:", easy_deck3, random.choice(type))
@@ -129,16 +135,8 @@ while round != 0:
         
       time.sleep(1)
       print ("")
-      print ("Do you think the third card is higher, lower or the same value?")
-      info()
-      
-      predict3 = input("Type your answer:")
-      while predict3 not in answers:
-        print ("Invalid Answer!")
-        print ("")
-        info()
-        print ("")
-        predict3 = input("Type your answer:")
+
+      predict3 = valid_predict("third")
 
       print ("")
       print ("The next card is:", easy_deck4, random.choice(type))
@@ -154,16 +152,8 @@ while round != 0:
         
       time.sleep(1)
       print ("")
-      print ("Do you think the fourth card is higher, lower or the same value?")
-      info()
-      
-      predict4 = input("Type your answer:")
-      while predict4 not in answers:
-        print ("Invalid Answer!")
-        print ("")
-        info()
-        print ("")
-        predict4 = input("Type your answer:")
+
+      predict4 = valid_predict("fourth")
 
       print ("")
       print ("The next card is:", easy_deck5, random.choice(type))
@@ -182,13 +172,7 @@ while round != 0:
       print ("Do you think the fifth card is higher, lower or the same value?")
       info()
       
-      predict5 = input("Type your answer:")
-      while predict5 not in answers:
-        print ("Invalid Answer!")
-        print ("")
-        info()
-        print ("")
-        predict5 = input("Type your answer:")
+  #######
 
       print ("")
       print ("The next card is:", easy_deck6, random.choice(type))
