@@ -169,10 +169,8 @@ while round != 0:
         
       time.sleep(1)
       print ("")
-      print ("Do you think the fifth card is higher, lower or the same value?")
-      info()
-      
-  #######
+
+      predict5 = valid_predict("fifth")
 
       print ("")
       print ("The next card is:", easy_deck6, random.choice(type))
@@ -192,16 +190,8 @@ while round != 0:
         
       time.sleep(1)
       print ("")
-      print ("Do you think the final card is higher, lower or the same value?")
-      info()
       
-      predict6 = input("Type your answer:")
-      while predict6 not in answers:
-        print ("Invalid Answer!")
-        print ("")
-        info()
-        print ("")
-        predict6 = input("Type your answer:")
+      predict6 = valid_predict("sixth")
 
       print ("")
       print ("The next card is:", easy_deck7, random.choice(type))
@@ -242,16 +232,8 @@ while round != 0:
     print("")
     time.sleep(1)
     print ("")
-    print ("Do you think the second card is higher, lower or the same value?")
-    info()
 
-    predict2 = input("Type your answer:")
-    while predict2 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict2 = input("Type your answer:")
+    predict2 = valid_predict("second")
 
     print ("The next card is:", hard_deck3, random.choice(type))
     print ("")
@@ -266,16 +248,8 @@ while round != 0:
         
     time.sleep(1)
     print ("")
-    print ("Do you think the third card is higher, lower or the same value?")
-    info()
-    
-    predict3 = input("Type your answer:")
-    while predict3 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict3 = input("Type your answer:")
+
+    predict3 = valid_predict("third")
 
     print ("The next card is:", hard_deck4, random.choice(type))
     print ("")
@@ -290,16 +264,8 @@ while round != 0:
         
     time.sleep(1)
     print ("")
-    print ("Do you think the fourth card is higher, lower or the same value?")
-    info()
-    
-    predict4 = input("Type your answer:")
-    while predict4 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict4 = input("Type your answer:")
+
+    predict4 = valid_predict("fourth")
 
     print ("The next card is:", hard_deck5, random.choice(type))
     print ("")
@@ -314,16 +280,8 @@ while round != 0:
         
     time.sleep(1)
     print ("")
-    print ("Do you think the fifth card is higher, lower or the same value?")
-    info()
-    
-    predict5 = input("Type your answer:")
-    while predict5 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict5 = input("Type your answer:")
+
+    predict5 = valid_predict("fifth")
 
     print ("The next card is:", hard_deck6, random.choice(type))
     print ("")
@@ -338,120 +296,80 @@ while round != 0:
 
     time.sleep(1)
     print ("")
-    print ("Do you think the sixth card is higher, lower or the same value?")
-    info()
 
-    predict7 = input("Type your answer:")
-    while predict7 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict7 = input("Type your answer:")
+    predict6 = valid_predict("sixth")
 
     print ("The next card is:", hard_deck8, random.choice(type))
     print ("")
-    if hard_deck8 < hard_deck7 and predict7 == "l":
+    if hard_deck8 < hard_deck7 and predict6 == "l":
       correct()
-    elif hard_deck8 > hard_deck7 and predict7 == "h":
+    elif hard_deck8 > hard_deck7 and predict6 == "h":
       correct()
-    elif hard_deck8 == hard_deck7 and predict7 == "s":
+    elif hard_deck8 == hard_deck7 and predict6 == "s":
       correct()
     else:
       incorrect()
       
     time.sleep(1)
     print ("")
-    print ("Do you think the seventh card is higher, lower or the same value?")
-    info()
 
-    predict8 = input("Type your answer:")
-    while predict8 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict8 = input("Type your answer:")
+    predict7 = valid_predict("seventh")
 
     print ("The next card is:", hard_deck9, random.choice(type))
     print ("")
-    if hard_deck9 < hard_deck8 and predict8 == "l":
+    if hard_deck9 < hard_deck8 and predict7 == "l":
       correct()
-    elif hard_deck9 > hard_deck8 and predict8 == "h":
+    elif hard_deck9 > hard_deck8 and predict7 == "h":
       correct()
-    elif hard_deck9 == hard_deck8 and predict8 == "s":
+    elif hard_deck9 == hard_deck8 and predict7 == "s":
       correct()
     else:
       incorrect()
         
     time.sleep(1)
     print ("")
-    print ("Do you think the eighth card is higher, lower or the same value?")
-    info()
 
-    predict9 = input("Type your answer:")
-    while predict9 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict9 = input("Type your answer:")
+    predict8 = valid_predict("eigth")
 
     print ("The next card is:", hard_deck10, random.choice(type))
     print ("")
-    if hard_deck10 < hard_deck9 and predict9 == "l":
+    if hard_deck10 < hard_deck9 and predict8 == "l":
       correct()
-    elif hard_deck10 > hard_deck9 and predict9 == "h":
+    elif hard_deck10 > hard_deck9 and predict8 == "h":
       correct()
-    elif hard_deck10 == hard_deck9 and predict9 == "s":
+    elif hard_deck10 == hard_deck9 and predict8 == "s":
       correct()
     else:
       incorrect()
       
     time.sleep(1)
     print ("")
-    print ("Do you think the ninth card is higher, lower or the same value?")
-    info()
 
-    predict10 = input("Type your answer:")
-    while predict10 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict10 = input("Type your answer:")
+    predict9 = valid_predict("ninth")
 
     print ("The next card is:", hard_deck11, random.choice(type))
     print ("")
-    if hard_deck11 < hard_deck10 and predict10 == "l":
+    if hard_deck11 < hard_deck10 and predict9 == "l":
       correct()
-    elif hard_deck11 > hard_deck10 and predict10 == "h":
+    elif hard_deck11 > hard_deck10 and predict9 == "h":
       correct()
-    elif hard_deck11 == hard_deck10 and predict10 == "s":
+    elif hard_deck11 == hard_deck10 and predict9 == "s":
       correct()
     else:
       incorrect()
       
     time.sleep(1)
     print ("")
-    print ("Do you think the final card is higher, lower or the same value?")
-    info()
-    
-    predict11 = input("Type your answer:")
-    while predict11 not in answers:
-      print ("Invalid Answer!")
-      print ("")
-      info()
-      print ("")
-      predict11 = input("Type your answer:")
+
+    predict10 = valid_predict("final")
 
     print ("The next card is:", hard_deck12, random.choice(type))
     print ("")
-    if hard_deck12 < hard_deck11 and predict11 == "l":
+    if hard_deck12 < hard_deck11 and predict10 == "l":
       correct()
-    elif hard_deck12 > hard_deck11 and predict11 == "h":
+    elif hard_deck12 > hard_deck11 and predict10 == "h":
       correct()
-    elif hard_deck12 == hard_deck11 and predict11 == "s":
+    elif hard_deck12 == hard_deck11 and predict10 == "s":
       correct()
     else:
       incorrect()
