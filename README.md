@@ -6,9 +6,10 @@
 - [ ] Noughts and Crosses
 - [ ] Guess the Number
 - [ ] Card Game
-- [ ]  
-- [ ] Connect Four (Still in progress of making)
-- [ ] Bingo (Coming Soon!)
+- [ ] Connect Four 
+- [ ] Bingo 
+- [ ] 
+- [ ] 21 (Coming Soon!)
 
 
 > [!note]

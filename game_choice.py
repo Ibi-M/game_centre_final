@@ -38,6 +38,7 @@ def choices():
     time.sleep(1)
     print (" - Card Game (Type '5')")
     time.sleep(1)
+    print (" - Connect Four (Type '6')")
     open_py_file()
 
 

@@ -49,9 +49,10 @@ def turns():
 
 def choice(check):
     if check == p1:
-        print ("Player 1 wins!")
+        print ("")
+        print (color.RED + color.BOLD + "Player 1 wins!" + color.END)
     elif check == p2:
-        print ("Player 2 wins!")
+        print (color.BLUE + color.BOLD + "Player 2 wins!" + color.END)
 
         
 
@@ -120,6 +121,7 @@ while end == False:
 
     if win (p1) == True:
         break
+    print (color.BLUE + "----------------------------------------------------------------------------" + color.END)
 
     fine = False
 
@@ -151,3 +153,4 @@ while end == False:
     win(p2)
     if win(p2) == True:
         break
+    print (color.RED + "----------------------------------------------------------------------------" + color.END)
