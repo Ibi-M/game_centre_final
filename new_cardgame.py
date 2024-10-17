@@ -33,7 +33,7 @@ def valid_predict(card_number):
     predict = input(prompt_message).strip().lower()
    
     while predict not in answers:
-        print("\nInvalid Answer!")
+        print("Invalid Answer!")
         info()
         predict = input(prompt_message).strip().lower()
    
@@ -131,20 +131,20 @@ while round != 0:
       time.sleep(1)
       print ("")
 
-      predict2 = valid_predict("second")
-      checking(easy_deck2,easy_deck3,predict2)
+      predict1 = valid_predict("second")
+      checking(easy_deck2,easy_deck3,predict1)
 
-      predict3 = valid_predict("third")
-      checking(easy_deck3,easy_deck4,predict3)
+      predict2 = valid_predict("third")
+      checking(easy_deck3,easy_deck4,predict2)
         
-      predict4 = valid_predict("fourth")
-      checking(easy_deck4,easy_deck5,predict4)
+      predict3 = valid_predict("fourth")
+      checking(easy_deck4,easy_deck5,predict3)
 
-      predict5 = valid_predict("fifth")
-      checking(easy_deck5,easy_deck6,predict5)
+      predict4 = valid_predict("fifth")
+      checking(easy_deck5,easy_deck6,predict4)
       
-      predict6 = valid_predict("sixth")
-      checking(easy_deck6,easy_deck7,predict6)
+      predict5 = valid_predict("sixth")
+      checking(easy_deck6,easy_deck7,predict5)
 
       time.sleep(1)
       print ("")
@@ -175,148 +175,33 @@ while round != 0:
     time.sleep(1)
     print ("")
 
-    predict2 = valid_predict("second")
+    predict1 = valid_predict("second")
+    checking(hard_deck2,hard_deck3,predict1)
 
-    print ("The next card is:", hard_deck3, random.choice(type))
-    print ("")
-    if hard_deck3 < hard_deck1 and predict2 == "l":
-      correct()
-    elif hard_deck3 > hard_deck1 and predict2 == "h":
-      correct()
-    elif hard_deck3 == hard_deck1 and predict2 == "s":
-      correct()
-    else:
-      incorrect()
-        
-    time.sleep(1)
-    print ("")
+    predict2 = valid_predict("third")
+    checking(hard_deck3,hard_deck4,predict2)
 
-    predict3 = valid_predict("third")
+    predict3 = valid_predict("fourth")
+    checking(hard_deck4,hard_deck5,predict3)
 
-    print ("The next card is:", hard_deck4, random.choice(type))
-    print ("")
-    if hard_deck4 < hard_deck3 and predict3 == "l":
-      correct()
-    elif hard_deck4 > hard_deck3 and predict3 == "h":
-      correct()
-    elif hard_deck4 == hard_deck3 and predict3 == "s":
-      correct()
-    else:
-      incorrect()
-        
-    time.sleep(1)
-    print ("")
+    predict4 = valid_predict("fifth")
+    checking(hard_deck5,hard_deck6,predict4)
 
-    predict4 = valid_predict("fourth")
+    predict5 = valid_predict("sixth")
+    checking(hard_deck6,hard_deck7,predict5)
 
-    print ("The next card is:", hard_deck5, random.choice(type))
-    print ("")
-    if hard_deck5 < hard_deck4 and predict4 == "l":
-      correct()
-    elif hard_deck5 > hard_deck4 and predict4 == "h":
-      correct()
-    elif hard_deck5 == hard_deck4 and predict4 == "s":
-      correct()
-    else:
-      incorrect()
-        
-    time.sleep(1)
-    print ("")
+    predict6 = valid_predict("seventh")
+    checking(hard_deck7,hard_deck8,predict6)
 
-    predict5 = valid_predict("fifth")
+    predict7 = valid_predict("eigth")
+    checking(hard_deck8,hard_deck9,predict7)
 
-    print ("The next card is:", hard_deck6, random.choice(type))
-    print ("")
-    if hard_deck6 < hard_deck5 and predict5 == "l":
-      correct()
-    elif hard_deck6 > hard_deck5 and predict5 == "h":
-      correct()
-    elif hard_deck6 == hard_deck5 and predict5 == "s":
-      correct()
-    else:
-      incorrect()
+    predict8 = valid_predict("ninth")
+    checking(hard_deck9,hard_deck10,predict8)
 
-    time.sleep(1)
-    print ("")
+    predict9 = valid_predict("final")
+    checking(hard_deck10,hard_deck11,predict9)
 
-    predict6 = valid_predict("sixth")
-
-    print ("The next card is:", hard_deck8, random.choice(type))
-    print ("")
-    if hard_deck8 < hard_deck7 and predict6 == "l":
-      correct()
-    elif hard_deck8 > hard_deck7 and predict6 == "h":
-      correct()
-    elif hard_deck8 == hard_deck7 and predict6 == "s":
-      correct()
-    else:
-      incorrect()
-      
-    time.sleep(1)
-    print ("")
-
-    predict7 = valid_predict("seventh")
-
-    print ("The next card is:", hard_deck9, random.choice(type))
-    print ("")
-    if hard_deck9 < hard_deck8 and predict7 == "l":
-      correct()
-    elif hard_deck9 > hard_deck8 and predict7 == "h":
-      correct()
-    elif hard_deck9 == hard_deck8 and predict7 == "s":
-      correct()
-    else:
-      incorrect()
-        
-    time.sleep(1)
-    print ("")
-
-    predict8 = valid_predict("eigth")
-
-    print ("The next card is:", hard_deck10, random.choice(type))
-    print ("")
-    if hard_deck10 < hard_deck9 and predict8 == "l":
-      correct()
-    elif hard_deck10 > hard_deck9 and predict8 == "h":
-      correct()
-    elif hard_deck10 == hard_deck9 and predict8 == "s":
-      correct()
-    else:
-      incorrect()
-      
-    time.sleep(1)
-    print ("")
-
-    predict9 = valid_predict("ninth")
-
-    print ("The next card is:", hard_deck11, random.choice(type))
-    print ("")
-    if hard_deck11 < hard_deck10 and predict9 == "l":
-      correct()
-    elif hard_deck11 > hard_deck10 and predict9 == "h":
-      correct()
-    elif hard_deck11 == hard_deck10 and predict9 == "s":
-      correct()
-    else:
-      incorrect()
-      
-    time.sleep(1)
-    print ("")
-
-    predict10 = valid_predict("final")
-
-    print ("The next card is:", hard_deck12, random.choice(type))
-    print ("")
-    if hard_deck12 < hard_deck11 and predict10 == "l":
-      correct()
-    elif hard_deck12 > hard_deck11 and predict10 == "h":
-      correct()
-    elif hard_deck12 == hard_deck11 and predict10 == "s":
-      correct()
-    else:
-      incorrect()
-    time.sleep(1)
-    print ("")
     print ("AND...")
     time.sleep(1)
     print ("")
