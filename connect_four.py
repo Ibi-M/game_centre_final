@@ -28,6 +28,7 @@ columns = [0,1,2,3,4,5]
 players_row = [row1,row2]
 players = ["Player 1", "Player 2"]
 
+
 value = " "
 
 game = [[(value), (value),(value),(value), (value),(value),(value)],

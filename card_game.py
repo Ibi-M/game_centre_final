@@ -46,13 +46,15 @@ def info():
 def valid_predict(card_number):
     answers = ["h", "l", "s"]
     print ("---------------------------------------------------------------------------------------------------")
-    print (f"Do you think the {card_number} card is higher, lower or the same value? Type your answer: ")
+    print (f"Do you think the {card_number} card is higher, lower or the same value?")
     print ("")
     info()
-    predict = input()
+    predict = input("Type your answer: ").lower()
    
     while predict not in answers:
-        print("Invalid Answer!")
+        print ("")
+        print(color.RED + "Invalid Answer!" + color.END)
+        print ("")
         info()
         predict = input()
    

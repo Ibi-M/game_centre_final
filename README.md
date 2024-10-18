@@ -8,7 +8,7 @@
 - [ ] Card Game
 - [ ] Connect Four 
 - [ ] Bingo 
-- [ ] 
+- [ ] --------------------
 - [ ] 21 (Coming Soon!)
 
 

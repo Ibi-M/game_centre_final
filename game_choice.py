@@ -40,6 +40,7 @@ def choices():
     time.sleep(1)
     print (" - Connect Four (Type '6')")
     open_py_file()
+  
 
 
 def final():
