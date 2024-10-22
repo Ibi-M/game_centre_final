@@ -1,4 +1,4 @@
-### This game centre involves 8 games:
+### This game centre involves 7 games with more coming soon:
 
 - [ ] Hangman
 - [ ] Rock, Paper, Scissors
@@ -6,8 +6,7 @@
 - [ ] Guess the Number
 - [ ] Card Game
 - [ ] Connect Four
-- [ ] --------------------
-- [ ] Bingo (In Progress of Editing)
+- [ ] Bingo 
 - [ ] --------------------
 - [ ] 21 (Coming Soon!)
 
