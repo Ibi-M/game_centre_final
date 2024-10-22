@@ -1,195 +1,135 @@
 import random
+import time
 
 class color:
-   PURPLE = '\033[95m'
-   CYAN = '\033[96m'
-   DARKCYAN = '\033[36m'
-   BLUE = '\033[94m'
-   GREEN = '\033[92m'
-   YELLOW = '\033[93m'
-   RED = '\033[91m'
-   WHITE = '\033[97m'
-   BOLD = '\033[1m'
-   UNDERLINE = '\033[4m'
-   END = '\033[0m'
+    PURPLE = '\033[95m'
+    CYAN = '\033[96m'
+    DARKCYAN = '\033[36m'
+    BLUE = '\033[94m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
+    RED = '\033[91m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+    END = '\033[0m'
 
 
-ticket = [["*", "*", "*"],["*", "*", "*"] ,["*", "*", "*"]]
-
-t1 = color.RED + ticket[0][0] + color.END
-t2 = color.GREEN + ticket[0][1] + color.END
-t3 = color.YELLOW + ticket[0][2] + color.END
-t4 = color.YELLOW + ticket[0][2] + color.END
-t5 = color.CYAN + ticket[0][2] + color.END
-t6 = color.PURPLE + ticket[0][2] + color.END
-t7 = color.BLUE + ticket[0][2] + color.END
-t8 = color.RED + ticket[0][2] + color.END
-t9 = color.DARKCYAN + ticket[0][2] + color.END
-
-table = [[t1,t2,t3],
-         [t4,t5,t6],
-         [t7,t8,t9]]
+print (color.BOLD + "You are going to play Bingo!")
+time.sleep(1)
+print ("")
+print ("Get 3 in a row to win!")
+time.sleep(1)
+print ("")
+print ("You can win: vertically, horizontally or diagonally!")
+print ("")
+time.sleep(1)
+print ("You have 9 guesses in total!")
+print ("- - - - - - - - - - - - - - - - - - - - - - - - - - " + color.END)
+print ("")
 
 
-col1_width = 3
-col2_width = 3 
-col3_width = 3  
+
+ans = []
+
+while len(ans) < 9:
+    num = random.randint(1, 20)
+    if num not in ans:
+        ans.append(num)
+
+solutions = [[ans[0], ans[1], ans[2]],
+             [ans[3], ans[4], ans[5]],
+             [ans[6], ans[7], ans[8]]]
 
 
-for item in table:
-    col1_text = item[0].center(col1_width)
-    col2_text = item[1].center(col2_width)
-    col3_text = item[2].center(col3_width)
+pos1 = "*"
+pos2 = "*"
+pos3 = "*"
+pos4 = "*"
+pos5 = "*"
+pos6 = "*"
+pos7 = "*"
+pos8 = "*"
+pos9 = "*"
+
+
+ticket = [[pos1, pos2, pos3],
+          [pos4, pos5, pos6],
+          [pos7, pos8, pos9]]
+
+colours = [[color.DARKCYAN, color.BLUE, color.YELLOW],
+           [color.PURPLE, color.GREEN, color.CYAN],
+           [color.YELLOW, color.DARKCYAN, color.PURPLE]]
+
+
+def print_ticket(ticket):
+    column_width = 15
     
-    print("|-  ", col1_text, "  -|-  ", col2_text, "  -|-  ", col3_text, "  -|")
+    print ((colours[0][0] + ticket[0][0] + color.END).center(column_width) + "|" + (colours[0][1] + ticket[0][1] + color.END).center(column_width) + "|" + (colours[0][2] + ticket[0][2] + color.END).center(column_width) )
+    print ((colours[1][0] + ticket[1][0] + color.END).center(column_width) + "|" + (colours[1][1] + ticket[1][1] + color.END).center(column_width) + "|" + (colours[1][2] + ticket[1][2] + color.END).center(column_width) )
+    print ((colours[2][0] + ticket[2][0] + color.END).center(column_width) + "|" + (colours[2][1] + ticket[2][1] + color.END).center(column_width) + "|" + (colours[2][2] + ticket[2][2] + color.END).center(column_width) )
 
-print(color.END)
-
-
-
-ticket[0][0] = random.randint(0,20)
-ticket[0][1] = random.randint(0,20)
-ticket[0][2] = random.randint(0,20)
-ticket[1][0] = random.randint(0,20)
-ticket[1][1] = random.randint(0,20)
-ticket[1][2] = random.randint(0,20)
-ticket[2][0] = random.randint(0,20)
-ticket[2][1] = random.randint(0,20)
-ticket[2][2] = random.randint(0,20)
-
-tickets_total = [ticket[0][0], ticket[0][1], ticket[0][2], ticket[1][0], ticket[1][1], ticket[1][2], ticket[2][0], ticket[2][1], ticket[2][2]]
-
-seen = set()
-for i, e in enumerate(tickets_total):
-    if e in seen:
-        tickets_total[i] = random.randint(0,20)
-    else:
-        seen.add(e)
-pos1 = "."
-pos2 = "."
-pos3 = "."
-pos4 = "."
-pos5 = "."
-pos6 = "."
-pos7 = "."
-pos8 = "."
-pos9 = "."
-
+        
 finish = False
+guesses = 9
+
+while finish == False and guesses != 0:
+    guesses = guesses - 1
+    guess = int(input("Guess a number between 1 and 20: "))
+    
+    if guess in ans:
+        print ("")
+        print(color.GREEN + "Correct!" + color.END)
+        print ("")
+        place = ans.index(guess)
+
+        row = place // 3
+        col = place % 3
+
+        guess = str(guess)
+        ticket[row][col] = guess
+
+        print_ticket(ticket)
 
 
-while finish != True: 
-    class color:
-        PURPLE = '\033[95m'
-        CYAN = '\033[96m'
-        DARKCYAN = '\033[36m'
-        BLUE = '\033[94m'
-        GREEN = '\033[92m'
-        YELLOW = '\033[93m'
-        RED = '\033[91m'
-        BOLD = '\033[1m'
-        WHITE = '\033[97m'
-        UNDERLINE = '\033[4m'
-        END = '\033[0m'
+        if ticket[0][0] == str(solutions[0][0]) and ticket[0][1] == str(solutions[0][1]) and ticket[0][2] == str(solutions[0][2]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
 
-    print (tickets_total)
-    guess = int(input("Input a number: "))
-    if guess in tickets_total:
-        print ("Yes, that's in the sequence!")
-        print (guess)
-        if guess == ticket[0][0]:
-            pos1 = guess
-        elif guess == ticket[0][1]:
-            pos2 = guess
-        elif guess == ticket[0][2]:
-            pos3 = guess
-        elif guess == ticket[1][0]:
-            pos4 = guess
-        elif guess == ticket[1][1]:
-            pos5 = guess
-        elif guess == ticket[1][2]:
-            pos6 = guess
-        elif guess == ticket[2][0]:
-            pos7 = guess
-        elif guess == ticket[2][1]:
-            pos8 = guess
-        elif guess == ticket[2][2]:
-            pos9 = guess
+        elif ticket[1][0] == str(solutions[1][0]) and ticket[1][1] == str(solutions[1][1]) and ticket[1][2] == str(solutions[1][2]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[2][0] == str(solutions[2][0]) and ticket[2][1] == str(solutions[2][1]) and ticket[2][2] == str(solutions[2][2]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[0][0] == str(solutions[0][0]) and ticket[1][0] == str(solutions[1][0]) and ticket[2][0] == str(solutions[2][0]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[0][1] == str(solutions[0][1]) and ticket[1][1] == str(solutions[1][1]) and ticket[2][1] == str(solutions[2][1]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[0][2] == str(solutions[0][2]) and ticket[1][2] == str(solutions[1][2]) and ticket[2][2] == str(solutions[2][2]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[0][0] == str(solutions[0][0]) and ticket[1][1] == str(solutions[1][1]) and ticket[2][2] == str(solutions[2][2]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
+
+        elif ticket[0][2] == str(solutions[0][2]) and ticket[1][1] == str(solutions[1][1]) and ticket[2][0] == str(solutions[2][0]):
+            finish = True
+            print (color.BOLD + color.UNDERLINE + "You have won!" + color.END)
     else:
-        print ("No, that's not in the sequence!")
+        print (color.RED + color.BOLD + "Incorrect!" + color.END)
+        print ("")
 
-        print (tickets_total)
-        
-        result = [[pos1, pos2, pos3],
-                  [pos4, pos5, pos6],
-                  [pos7, pos8, pos9]]
+if guesses == 0:
+    print (color.RED + color.BOLD + color.UNDERLINE + "You have lost!" + color.END)
     print ("")
-    print (pos1,pos2,pos3)
-    print (pos4,pos5,pos6)
-    print (pos7,pos8,pos9)
-
-    if type(pos1) is int and type(pos2) is int and type(pos3) is int:
-        print ("You have won!")
-        print (color.YELLOW, pos1,pos2,pos3, color.END)
-        print (pos4,pos5,pos6)
-        print (pos7,pos8,pos9)
-        finish = True
-       
-        print ("_________________")
-        print ("|",color.YELLOW, pos1, color.END,  "|",color.YELLOW, pos2,color.END, "|",color.YELLOW, pos3, color.END, "|")
-        print ("|_____|_____|_____|")
-        print ("|", pos4, "  |", pos5, " |", pos6,"  |")
-        print ("|____|_____|_____|")
-        print ("|", pos7, " | ", pos8, " | ", pos9," |")
-        print ("|____|_____|_____|")
-
-        
-    elif type(pos4) is int and type(pos5) is int and type(pos6) is int:
-        print ("You have won!") 
-        print (color.WHITE, pos1,pos2,pos3, color.END)
-        print (color.YELLOW, pos4,pos5,pos6, color.END)
-        print (color.WHITE, pos7,pos8,pos9, color.END)
-        finish = True
-        
-    elif type(pos7) is int and type(pos8) is int and type(pos9) is int:
-        print ("You have won!")   
-        print (pos1,pos2,pos3)
-        print (pos4,pos5,pos6)
-        print (color.YELLOW, pos7,pos8,pos9, color.END)
-        finish = True
-        
-    elif type(pos1) is int and type(pos4) is int and type(pos7) is int:
-        print ("You have won!") 
-        print (color.YELLOW, pos1,color.END, pos2,pos3)
-        print (color.YELLOW, pos4,color.END, pos5,pos6)
-        print (color.YELLOW, pos7,color.END, pos8,pos9)
-        finish = True
-        
-    elif type(pos2) is int and type(pos5) is int and type(pos8) is int:
-        print ("You have won!") 
-        print (pos1,color.YELLOW, pos2,color.END, pos3)
-        print (pos4,color.YELLOW, pos5,color.END, pos6)
-        print (pos7,color.YELLOW, pos8,color.END, pos9)
-        finish = True
-        
-    elif type(pos3) is int and type(pos6) is int and type(pos9) is int:
-        print ("You have won!")  
-        print (pos1,pos2,color.YELLOW, pos3,color.END)
-        print (pos4,pos5,color.YELLOW, pos6,color.END)
-        print (pos7,pos8,color.YELLOW, pos9,color.END)
-        finish = True
-        
-    elif type(pos1) is int and type(pos5) is int and type(pos9) is int:
-        print ("You have won!")     
-        print (color.YELLOW, pos1, color.END,pos2,pos3)
-        print (pos4,color.YELLOW, pos5, color.END, pos6)
-        print (pos7,pos8,color.YELLOW, pos9, color.END)
-        finish = True
-        
-    elif type(pos3) is int and type(pos5) is int and type(pos7) is int:
-        print ("You have won!") 
-        print (pos1,pos2,color.YELLOW, pos3,color.END)
-        print (pos4,color.YELLOW, pos5,color.END, pos6)
-        print (color.YELLOW, pos7,color.END, pos8,pos9)
-        finish = True
+    print ("The numbers were:")
+    print ("")
+    print (solutions)
        
