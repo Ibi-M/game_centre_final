@@ -22,6 +22,9 @@ def open_py_file():
     
     elif choose == 6:
         call(["python", "connect_four.py "])
+
+    elif choose == 7:
+        call(["python", "bingo.py"])
     
     else:
         print ("Invalid!")
@@ -39,6 +42,8 @@ def choices():
     print (" - Card Game (Type '5')")
     time.sleep(1)
     print (" - Connect Four (Type '6')")
+    time.sleep(!)
+    print ("- Bingo (Type '7')")
     open_py_file()
   
 
