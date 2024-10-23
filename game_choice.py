@@ -4,6 +4,7 @@ from subprocess import call
 
 def open_py_file():
     choose = int(input())
+    print ("")
         
     if choose == 1:
         call(["python", "hangman.py"])
@@ -21,7 +22,11 @@ def open_py_file():
         call(["python",  "card_game.py" ])   
     
     elif choose == 6:
+<<<<<<< HEAD
         call(["python", "connect_four.py "])
+=======
+        call(["python", "connect_four.py"])
+>>>>>>> b13cf5d (Completed)
 
     elif choose == 7:
         call(["python", "bingo.py"])
@@ -42,8 +47,13 @@ def choices():
     print (" - Card Game (Type '5')")
     time.sleep(1)
     print (" - Connect Four (Type '6')")
+<<<<<<< HEAD
     time.sleep(!)
     print ("- Bingo (Type '7')")
+=======
+    time.sleep(1)
+    print (" - Bingo (Type '7')")
+>>>>>>> b13cf5d (Completed)
     open_py_file()
   
 

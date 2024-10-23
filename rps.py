@@ -2,10 +2,12 @@ import random
 import time
 
 class color:
+    BOLD = '\033[1m'
     RED = '\033[91m'
     END = '\033[0m'
      
-("You are going to play Rock, Paper, Scissors with 3 rounds")
+print (color.BOLD + "You are going to play Rock, Paper, Scissors with 3 rounds with the Computer" + color.END)
+print ("")
 rounds = 3
 turns = ["first", "second", "final"]
 no_turns = 0

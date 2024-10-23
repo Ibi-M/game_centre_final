@@ -57,7 +57,7 @@ def valid_guess(guess, used):
         return False
     return True
 
-print("You are going to play Hangman...")
+print(color.BOLD + "You are going to play Hangman..." + color.END)
 print("")
 list = ["remote", "toothpaste", "picture", "glass", "puddle", "truck", "ring", "fridge", "knife", "candle", "newspaper", "speakers", "lamp", "toothbrush", "window", "pants", "clothes", "blouse", "button"]
 word = random.choice(list)

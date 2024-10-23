@@ -73,7 +73,7 @@ def checking(card1,card2,predict):
         
 
 
-print ("Hello! Welcome to this Card Game!")
+print (color.BOLD + "You are going to play the Card Game!")
 time.sleep (1)
 print ("")
 print ("You will be given a selection of cards.")
@@ -94,7 +94,7 @@ time.sleep (1)
 print ("If you were correct, then your score will increase by 1.")
 time.sleep (1)
 print ("")
-print ("If you are incorrect, well then, your score is not affected and that is just bad luck :-)")
+print ("If you are incorrect, well then, your score is not affected and that is just bad luck :-)" + color.END)
 time.sleep (1)
 print ("")
 round = 4

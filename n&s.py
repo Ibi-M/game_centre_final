@@ -92,6 +92,8 @@ class color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
+print (color.BOLD + "You are going to play Noughts and Crosses with the Computer!" + color.END)
+print ("")
 
 game = [[".", ".", "."],
         [".", ".", "."],

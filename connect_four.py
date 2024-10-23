@@ -86,8 +86,9 @@ def win(p):
                 return True
     return False
 
-print("Welcome to Connect Four!")
-print("Player 1 will be RED and Player 2 will be BLUE")
+print(color.BOLD + "Welcome to Connect Four!")
+print("Player 1 will be RED and Player 2 will be BLUE" + color.END)
+print ("")
 
 end = False
 while end == False:
