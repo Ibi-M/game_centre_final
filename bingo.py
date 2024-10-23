@@ -132,7 +132,5 @@ if guesses == 0:
     print ("The numbers were:")
     print ("")
     print (solutions)
-<<<<<<< HEAD
+
        
-=======
->>>>>>> b13cf5d (Completed)
