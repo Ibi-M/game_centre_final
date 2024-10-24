@@ -4,13 +4,12 @@
 
 - [ ] Hangman
 - [ ] Rock, Paper, Scissors
-- [ ] Noughts and Crosses
+- [ ] Noughts and Crosses (2 Player)
 - [ ] Guess the Number
 - [ ] Card Game
-- [ ] Connect Four
+- [ ] Connect Four (2 Player)
 - [ ] Bingo 
-- [ ] --------------------
-- [ ] 21 (Coming Soon!)
+- [ ] 21 (2 Player)
 
 
 > [!note]
