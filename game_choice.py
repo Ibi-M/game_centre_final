@@ -30,6 +30,9 @@ def open_py_file():
     elif choose == 8:
         call(["python", "21.py"])
     
+    elif choose == 9:
+        call(["python", "memory_match.py"])
+    
     else:
         print ("Invalid!")
     
@@ -50,6 +53,8 @@ def choices():
     print (" - Bingo (Type '7')")
     time.sleep(1)
     print (" - 21 (Type '8')")
+    time.sleep(1)
+    print (" - Memory Game ('Type '9')")
 
     open_py_file()
   
