@@ -10,7 +10,6 @@
 - [ ] Connect Four (2 Player)
 - [ ] Bingo 
 - [ ] 21 (2 Player)
-- [ ] --------------------------------
 - [ ] Animals Memory Game (NEW!)
 
 
