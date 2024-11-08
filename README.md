@@ -11,7 +11,7 @@
 - [ ] Bingo 
 - [ ] 21 (2 Player)
 - [ ] --------------------------------
-- [ ] Animals Memory Game (Still in progress of editing)
+- [ ] Animals Memory Game (NEW!)
 
 
 > [!note]
