@@ -33,6 +33,9 @@ def open_py_file():
     elif choose == 9:
         call(["python", "memory_match.py"])
     
+    elif choose == 10:
+        call(["python", "wordle.py"])
+    
     else:
         print ("Invalid!")
     
@@ -55,7 +58,8 @@ def choices():
     print (" - 21 (Type '8')")
     time.sleep(1)
     print (" - Memory Game ('Type '9')")
-
+    time.sleep(1)
+    print (" - Wordle (Type '10')")
     open_py_file()
   
 

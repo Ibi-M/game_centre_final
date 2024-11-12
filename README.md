@@ -1,6 +1,6 @@
 ### Run the 'game_choice.py' file if you want to try the Game Centre! 
 
-## This game centre involves 9 games with more coming soon:
+## This game centre involves 10 games with more coming soon:
 
 - [ ] Hangman
 - [ ] Rock, Paper, Scissors
@@ -10,10 +10,8 @@
 - [ ] Connect Four (2 Player)
 - [ ] Bingo 
 - [ ] 21 (2 Player)
-- [ ] Animals Memory Game (NEW!)
-- [ ] ---------------------------
-- [ ] Wordle (COMING SOON!)
-
+- [ ] Animals Memory Game
+- [ ] Wordle (NEW!)
 
 > [!note]
 With more to come!
