@@ -11,6 +11,8 @@
 - [ ] Bingo 
 - [ ] 21 (2 Player)
 - [ ] Animals Memory Game (NEW!)
+- [ ] ---------------------------
+- [ ] Wordle (COMING SOON!)
 
 
 > [!note]
