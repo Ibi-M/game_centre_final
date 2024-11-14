@@ -1,6 +1,6 @@
 ### Run the 'game_choice.py' file if you want to try the Game Centre! 
 
-## This game centre involves 10 games with more coming soon:
+## This game centre involves 10 text-based games with more coming soon:
 
 - [ ] Hangman
 - [ ] Rock, Paper, Scissors
