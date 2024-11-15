@@ -2,10 +2,6 @@ import random
 import time
 
 class color:
-    PURPLE = '\033[95m'
-    CYAN = '\033[96m'
-    DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
@@ -61,7 +57,7 @@ def valid_predict(card_number):
     return predict
 
 def checking(card1,card2,predict):
-    print ("The next card is:", card2, random.choice(type))
+    print ("The next card is: " +color.YELLOW + str(card2) + color.END + " " + random.choice(type))
     if card2 < card1 and predict == "l":
         correct()
     elif card2 > card1 and predict == "h":
@@ -138,7 +134,7 @@ while round != 0:
       print ("")
       time.sleep(1)
       print ("")
-      print ("Your first card is", easy_deck1, random.choice(type))
+      print ("Your first card is", color.YELLOW + str(easy_deck1) + color.END + " " + random.choice(type))
       time.sleep(1)
       print("")
 
@@ -177,7 +173,7 @@ while round != 0:
     print ("There will be a range between 2 and 20!")
     time.sleep(1)
     print ("")
-    print ("Your first card is", hard_deck1, random.choice(type))
+    print ("Your first card is", color.YELLOW + hard_deck1 + color.YELLOW + " " + random.choice(type))
     time.sleep(1)
     print("")
     time.sleep(1)

@@ -1,8 +1,6 @@
 class color:
     PURPLE = '\033[95m'
-    CYAN = '\033[96m'
     DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
     GREEN = '\033[92m'
     YELLOW = '\033[93m'
     RED = '\033[91m'
@@ -38,7 +36,6 @@ for i in range(2):
             print(color.RED + "Player name cannot be empty. Please enter a valid name." + color.END)
             print ("")
 
-
 current_number = 0
 player_index = 0
     
@@ -55,5 +52,4 @@ while current_number < 21:
     if current_number >= 21:
         print(color.PURPLE + player + " says 21 and loses the game!" + color.END)
         
-  
     player_index = (player_index + 1) % len(players)
