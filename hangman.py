@@ -94,7 +94,7 @@ while finish == False:
 
     if guess in word:
         print("")
-        print("Yes, that letter is in the word")
+        print(color.GREEN + "Yes, that letter is in the word" + color.END)
         new = ""
 
         for i in range(len(word)):
@@ -106,7 +106,7 @@ while finish == False:
 
     else:
         print("")
-        print("Nope, that letter is not in the word")
+        print(color.RED + "Nope, that letter is not in the word" + color.END)
         wrong = wrong + 1
 
     print("")

@@ -4,6 +4,8 @@ import time
 class color:
     BOLD = '\033[1m'
     RED = '\033[91m'
+    GREEN = '\033[92m'
+    YELLOW = '\033[93m'
     END = '\033[0m'
      
 print (color.BOLD + "You are going to play Rock, Paper, Scissors with 3 rounds with the Computer" + color.END)
@@ -59,52 +61,52 @@ while rounds != 0:
     time.sleep(1)
         
     if answer == "R" and index == 0:
-        print ("You have chose the same as the computer")
-        print ("This will not count as a round")
+        print (color.YELLOW + "You have chose the same as the computer")
+        print ("This will not count as a round" + color.END)
         fine = False
         print ("--------------------------------------------------")
         time.sleep(1)
             
     elif answer == "P" and index == 1:
-        print ("You have chose the same as the computer")
-        print ("This will not count as a round")
+        print (color.YELLOW + "You have chose the same as the computer")
+        print ("This will not count as a round" + color.END)
         fine = False
         print ("-----------------------------------------")
         time.sleep(1)
             
     elif answer == "S" and index == 2:
-        print ("You have chose the same as the computer")
-        print ("This will not count as a round")
+        print (color.YELLOW + "You have chose the same as the computer")
+        print ("This will not count as a round" + color.END)
         fine = False
         print ("-----------------------------------------")
         time.sleep(1)
         
 
     if answer == "R" and index == 2:
-        print ("You have won the ", turns[no_turns],"round!")
+        print ("You have " + color.GREEN + "won" + color.END + " the ", turns[no_turns],"round!")
         win = win + 1
         rounds = rounds - 1
         
     elif answer == "P" and index == 0:
-        print ("You have won the ", turns[no_turns],"round!")
+        print ("You have " + color.GREEN + "won" + color.END + " the ", turns[no_turns],"round!")
         win = win + 1
         rounds = rounds - 1
             
     elif answer == "S" and index == 1:
-        print ("You have won the ", turns[no_turns],"round!")
+        print ("You have " + color.GREEN + "won" + color.END + " the ", turns[no_turns],"round!")
         win = win + 1
         rounds = rounds - 1
             
     elif answer == "R" and index == 1:
-        print ("You have lost the ", turns[no_turns],"round!")
+        print ("You have " + color.RED + "lost" + color.END + " the ", turns[no_turns],"round!")
         rounds = rounds - 1
     
     elif answer == "S" and index == 0:
-        print ("You have lost the ", turns[no_turns],"round!")
+        print ("You have " + color.RED + "lost" + color.END + " the ", turns[no_turns],"round!")
         rounds = rounds - 1
     
     elif answer == "P" and index == 2:
-        print ("You have lost the ", turns[no_turns],"round!")
+        print ("You have " + color.RED + "lost" + color.END + " the ", turns[no_turns],"round!")
         rounds = rounds - 1
     
     if no_turns == 3:
@@ -127,7 +129,7 @@ elif win > 1:
         
 print ("")
 time.sleep(1)
-print ("The 3 rounds are finished, and you have won", win, word)
+print ("The 3 rounds are finished, and you have" + color.GREEN +  " won " + color.END, win, word)
 print ("")
 if win > 1:
     result = "won"
