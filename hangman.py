@@ -1,7 +1,7 @@
 import random
 import time
 
-class color:
+class color: #Defines colors
     PURPLE = '\033[95m'
     CYAN = '\033[96m'
     DARKCYAN = '\033[36m'
@@ -13,7 +13,7 @@ class color:
     UNDERLINE = '\033[4m'
     END = '\033[0m'
 
-hangman = [
+hangman = [            # Default Layout for whole game
     "-------------",
     "|",
     "|",
@@ -24,11 +24,11 @@ hangman = [
     "-------------"
 ]
 
-def print_hangman():
+def print_hangman():       # Displays the current hangman layout
     for line in hangman:
         print(color.BOLD + line + color.END)
 
-def update_hangman(wrong):
+def update_hangman(wrong): # Updates the hangman display if the player has got it wrong
     if wrong == 1:
         hangman[1] = "|       |"  
     elif wrong == 2:
@@ -45,7 +45,7 @@ def update_hangman(wrong):
         hangman[5] = "|      " + color.RED + "/ \\" + color.END  
         hangman[6] = "|   GAME OVER"  
 
-def valid_guess(guess, used):
+def valid_guess(guess, used):  # Checks if the guess inputted is valid or not
     if len(guess) != 1 or guess.isalpha() == False:
         print(color.RED + "Invalid input! Please enter a single letter (a-z)." + color.END)
         print("")
@@ -57,12 +57,12 @@ def valid_guess(guess, used):
         return False
     return True
 
-print(color.BOLD + "You are going to play Hangman..." + color.END)
+print(color.BOLD + "You are going to play Hangman..." + color.END) # Primary Display for the Game
 print("")
 list = ["remote", "toothpaste", "picture", "glass", "puddle", "truck", "ring", "fridge", "knife", "candle", "newspaper", "speakers", "lamp", "toothbrush", "window", "pants", "clothes", "blouse", "button"]
 word = random.choice(list)
 used = []
-so_far = ("-") * len(word) 
+so_far = ("-") * len(word) # Variable that is used to record player progress 
 wrong = 0                  
 
 length = len(word)
@@ -78,7 +78,7 @@ print("")
 
 finish = False
 
-while finish == False:
+while finish == False: # Loops the game until the player guesses the word or runs out of guesses
     round = round + 1
     time.sleep(1)
     print((color.YELLOW + color.BOLD + color.UNDERLINE) + "Guess:", round, "" + color.END)
@@ -97,7 +97,7 @@ while finish == False:
         print(color.GREEN + "Yes, that letter is in the word" + color.END)
         new = ""
 
-        for i in range(len(word)):
+        for i in range(len(word)): #Updates the variable of the player progress
             if guess == word[i]:
                 new = new + guess    
             else:
