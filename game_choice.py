@@ -1,8 +1,7 @@
 import time
-
 from subprocess import call
 
-def open_py_file():
+def open_py_file(): # Opens the game which relates to the user input
     choose = int(input())
     print ("")
         
@@ -40,7 +39,7 @@ def open_py_file():
         print ("Invalid!")
     
 
-def choices():
+def choices(): # Displays the game choices
     print (" - Hangman (Type '1')")
     time.sleep(1)
     print (" - Rock Paper Scissors (Type '2')")
@@ -62,9 +61,7 @@ def choices():
     print (" - Wordle (Type '10')")
     open_py_file()
   
-
-
-def final():
+def final(): # Asks the user at the end of their gane if they would like to play an another game
     global finish
     finish = False
 

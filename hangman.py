@@ -47,24 +47,20 @@ def update_hangman(wrong): # Updates the hangman display if the player has got i
 
 def valid_guess(guess, used):  # Checks if the guess inputted is valid or not
     if len(guess) != 1 or guess.isalpha() == False:
-        print(color.RED + "Invalid input! Please enter a single letter (a-z)." + color.END)
-        print("")
+        print(color.RED + "Invalid input! Please enter a single letter (a-z).\n" + color.END)
         return False
 
     if guess in used:
-        print("You've already tried this letter. Choose another.")
-        print("")
+        print("You've already tried this letter. Choose another.\n")
         return False
     return True
 
-print(color.BOLD + "You are going to play Hangman..." + color.END) # Primary Display for the Game
-print("")
+print(color.BOLD + "You are going to play Hangman...\n" + color.END) # Primary Display for the Game
 list = ["remote", "toothpaste", "picture", "glass", "puddle", "truck", "ring", "fridge", "knife", "candle", "newspaper", "speakers", "lamp", "toothbrush", "window", "pants", "clothes", "blouse", "button"]
 word = random.choice(list)
 used = []
 so_far = ("-") * len(word) # Variable that is used to record player progress 
 wrong = 0                  
-
 length = len(word)
 dash = "-"
 g_word = dash * length
@@ -74,27 +70,24 @@ max_guesses = 7
 
 print("You are going to guess the following word: ")
 print(g_word)
-print("")
 
 finish = False
 
 while finish == False: # Loops the game until the player guesses the word or runs out of guesses
     round = round + 1
     time.sleep(1)
-    print((color.YELLOW + color.BOLD + color.UNDERLINE) + "Guess:", round, "" + color.END)
-    print("")
+    print((color.YELLOW + color.BOLD + color.UNDERLINE) + "\nGuess:", round, "" + color.END)
     print(f"Used Letters {used}")
-    guess = input("Guess a letter: ")
+    guess = input("\nGuess a letter: ")
 
     guess = guess.lower()
     while valid_guess(guess, used) == False:
-        guess = input("Guess a letter: ")
+        guess = input("\nGuess a letter: ")
 
     used.append(guess)
 
     if guess in word:
-        print("")
-        print(color.GREEN + "Yes, that letter is in the word" + color.END)
+        print(color.GREEN + "\nYes, that letter is in the word\n" + color.END)
         new = ""
 
         for i in range(len(word)): #Updates the variable of the player progress
@@ -105,13 +98,10 @@ while finish == False: # Loops the game until the player guesses the word or run
         so_far = new 
 
     else:
-        print("")
-        print(color.RED + "Nope, that letter is not in the word" + color.END)
+        print(color.RED + "Nope, that letter is not in the word\n" + color.END)
         wrong = wrong + 1
 
-    print("")
     print(so_far)
-    print("")
     confirm = False
 
     update_hangman(wrong)
@@ -124,9 +114,8 @@ while finish == False: # Loops the game until the player guesses the word or run
     guesses = guesses + 1
 
     if wrong == 7:
-        print("You have lost as you have guessed the maximum amount of letters that you're allowed to guess!")
+        print("\nYou have lost as you have guessed the maximum amount of letters that you're allowed to guess!\n")
         finish = True
-        print("")
         print("The word was", (color.BOLD + color.UNDERLINE + color.BLUE) + word + color.END)
 
     if so_far == word:
