@@ -1,13 +1,15 @@
 import random
 import time
 
-class color: # Class - Defines all colors used
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
+import random
+import time
+from colorama import *
+init(autoreset=True)
+
+class color:
     UNDERLINE = '\033[4m'
-    END = '\033[0m'
+
+# Fore: BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE, RESET.
 
 def correct(): # For when the player has guessed correctly
   global score
@@ -15,14 +17,14 @@ def correct(): # For when the player has guessed correctly
   score = score + 1
   round = round - 1
   time.sleep(1)
-  print (color.GREEN + "\nYou have guessed correctly!" + color.END)
+  print (f"\n{Fore.GREEN}You have guessed correctly!")
   score = str(score)
-  print (color.BOLD + "Your score is now\n", score + color.END)
+  print (f"{Style.BRIGHT}Your score is now score \n")
   score = int(score)
 
 def incorrect(): # For when the player has guessed incorrectly
   time.sleep(1)
-  print (color.RED + "\nYou are wrong!\n" + color.END)
+  print (f"\n{Fore.RED}You are wrong!\n")
 
 def info(): # Displays the input instructions
   print ("Answer by typing either:")
@@ -42,15 +44,13 @@ def valid_predict(card_number): # Checks if the input is valid or not
     predict = input("Type your answer: ").lower()
    
     while predict not in answers:                           
-        print ("")
-        print(color.RED + "Invalid Answer!" + color.END)
-        print ("")
+        print(f"\n{Fore.RED}Invalid Answer!\n")
         info()
         predict = input()
     return predict
 
 def checking(card1,card2,predict): # Checks if the guessed card matches the generated one
-    print ("The next card is: " +color.YELLOW + str(card2) + color.END + " " + random.choice(type))
+    print (f"The next card is: {Fore.YELLOW + str(card2) + Fore.RESET} {random.choice(type)}")
     if card2 < card1 and predict == "l":
         correct()
     elif card2 > card1 and predict == "h":
@@ -60,21 +60,21 @@ def checking(card1,card2,predict): # Checks if the guessed card matches the gene
     else:
         incorrect()
 # ---------------------------- INTRO ----------------------------
-print (color.BOLD + "You are going to play the Card Game!\n")
+print (f"{Style.BRIGHT}You are going to play the Card Game!\n")
 time.sleep (1)
-print ("You will be given a selection of cards.\n")
+print (f"{Style.BRIGHT}You will be given a selection of cards.\n")
 time.sleep (1)
-print ("You will draw the 1st card...\n")
+print (f"{Style.BRIGHT}You will draw the 1st card...\n")
 time.sleep (1)
-print ("Next, you will determine whether the following card will be higher or lower than the card that has been drawed...\n")
+print (f"{Style.BRIGHT}Next, you will determine whether the following card will be higher or lower than the card that has been drawed...\n")
 time.sleep (1)
-print ("Note that the game is to guess THE 'VALUE' OF THE CARD, NOT THE TYPE!\n")
-print ("e.g: 2 Diamonds. Make sure you only predict whether the value (the number) of the card, not the type, (Diamonds, Spades, etc) or else you will lose!\n")
-print ("You will draw the next card...\n")
+print (f"{Style.BRIGHT}Note that the game is to guess THE 'VALUE' OF THE CARD, NOT THE TYPE!\n")
+print (f"{Style.BRIGHT}e.g: 2 Diamonds. Make sure you only predict whether the value (the number) of the card, not the type, (Diamonds, Spades, etc) or else you will lose!\n")
+print (f"{Style.BRIGHT}You will draw the next card...\n")
 time.sleep (1)
-print ("If you were correct, then your score will increase by 1.\n")
+print (f"{Style.BRIGHT}If you were correct, then your score will increase by 1.\n")
 time.sleep (1)
-print ("If you are incorrect, well then, your score is not affected and that is just bad luck :-)\n" + color.END)
+print (f"{Style.BRIGHT}If you are incorrect, well then, your score is not affected and that is just bad luck :-)\n")
 time.sleep (1)
 # ---------------------------------------------------------------
 
@@ -117,9 +117,8 @@ while round != 0:
       time.sleep(1)
       print ("OK! Since you have chosen the 'easy' level, you will have 5 cards to guess...\n")
       time.sleep(1)
-      print ("Your first card is", color.YELLOW + str(easy_deck1) + color.END + " " + random.choice(type))
+      print (f"Your first card is {Fore.YELLOW + str(easy_deck1) + Fore.RESET} {random.choice(type)}\n")
       time.sleep(1)
-      print("") 
 
  # --------- Performs the subroutines for the easy level; each card for the player to guess----------
       predict1 = valid_predict("second")
@@ -142,7 +141,7 @@ while round != 0:
       time.sleep(1)
       print ("\nAND...")
       time.sleep(1)
-      print ("\nThat is the end of the game! You achieved a score of", score, "/5!")
+      print (f"\nThat is the end of the game! You achieved a score of {score}/5!")
       break
   
   if deck_choice == "h":
@@ -153,9 +152,8 @@ while round != 0:
     time.sleep(1.5)
     print ("There will be a range between 2 and 20!\n")
     time.sleep(1)
-    print ("Your first card is", color.YELLOW + hard_deck1 + color.YELLOW + " " + random.choice(type))
+    print (f"Your first card is {Fore.YELLOW + hard_deck1 + Fore.YELLOW} {random.choice(type)}\n")
     time.sleep(1)
-    print("")
 
     # --------- Performs the subroutines for the difficult level; each card for the player to guess----------
 
@@ -192,5 +190,5 @@ while round != 0:
     # ----------------------------------------------------------------------------------
     print ("\nAND...\n")
     time.sleep(1)
-    print (color.BOLD + "That is the end of the game! You achieved a score of", score, "/10!" + color.END)
+    print (f"That is the end of the game! You achieved a score of {score}/10!")
     break
