@@ -66,7 +66,6 @@ def final(): # Asks the user at the end of their gane if they would like to play
     finish = False
 
     while finish == False:
-        print ("")
         print ("----------------------------------------------")
         print ("Would you like to play another game?")
         again = input()
@@ -83,14 +82,8 @@ def final(): # Asks the user at the end of their gane if they would like to play
             print ("------------------------------")
             print ("Thanks for playing on Ibi's Game Centre! ")
             finish = True
-       
-        
 
-
-print ("Welcome to the Game Centre!")
-print ("")
+print ("Welcome to the Game Centre!\n")
 print ("You have a choice of:")
-
 choices()
-
 final()

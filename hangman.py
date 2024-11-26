@@ -1,17 +1,11 @@
 import random
 import time
+from colorama import *
+init(autoreset=True)
 
-class color: #Defines colors
-    PURPLE = '\033[95m'
-    CYAN = '\033[96m'
-    DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
+class color:
     UNDERLINE = '\033[4m'
-    END = '\033[0m'
+
 
 hangman = [            # Default Layout for whole game
     "-------------",
@@ -26,23 +20,23 @@ hangman = [            # Default Layout for whole game
 
 def print_hangman():       # Displays the current hangman layout
     for line in hangman:
-        print(color.BOLD + line + color.END)
+        print(Style.BRIGHT + line + Fore.RESET)
 
 def update_hangman(wrong): # Updates the hangman display if the player has got it wrong
     if wrong == 1:
         hangman[1] = "|       |"  
     elif wrong == 2:
-        hangman[2] = "|       " + color.RED + "O" + color.END  
+        hangman[2] = f"|      {Fore.RED} O"  
     elif wrong == 3:
-        hangman[3] = "|       " + color.RED + "|" + color.END
+        hangman[3] = f"|      {Fore.RED} |" 
     elif wrong == 4:
-        hangman[4] = "|      " + color.RED + "/|" + color.END  
+        hangman[4] = f"|      {Fore.RED} /|"  
     elif wrong == 5:
-        hangman[4] = "|      " + color.RED + "/|\\" + color.END  
+        hangman[4] = f"|      {Fore.RED} /|\\"
     elif wrong == 6:
-        hangman[5] = "|      " + color.RED + "/" + color.END  
+        hangman[5] = f"|      {Fore.RED} /" 
     elif wrong == 7:
-        hangman[5] = "|      " + color.RED + "/ \\" + color.END  
+        hangman[5] = f"|      {Fore.RED} / \\"
         hangman[6] = "|   GAME OVER"  
 
 def valid_guess(guess, used):  # Checks if the guess inputted is valid or not
