@@ -1,23 +1,20 @@
 import random
 import time
+from colorama import *
+init(autoreset=True)
 
-class color: # Defines all the colors used
-    GREEN = '\033[32m'
-    YELLOW = '\033[33m'
-    GRAY = '\033[37m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
-    END = '\033[0m'
+class color:
+    UNDERLINE = '\033[4m'
 
 # Intro
-print (color.BOLD + "\nYou are going to play Wordle!\n")
+print (f"\n{Style.BRIGHT}You are going to play Wordle!\n")
 time.sleep(1)
-print ("Simply just guess a word and follow these colors:\n" + color.END)
-print (" - " + color.GREEN + "GREEN " + color.END + "Coloured Letters are correctly guessed in their correctly guesses positions!")
+print (f"\n{Style.BRIGHT}Simply just guess a word and follow these colors:\n")
+print (f" - {Fore.GREEN} GREEN {Fore.RESET} Coloured Letters are correctly guessed in their correctly guesses positions!")
 time.sleep(1)
-print (" - " + color.YELLOW + "YELLOW " + color.END + "Coloured Letters are correctly guessed but they are in wrong position of the word!")
+print (f" - {Fore.YELLOW} YELLOW {Fore.RESET} Coloured Letters are correctly guessed but they are in wrong position of the word!")
 time.sleep(1)
-print (" - " + color.GRAY + "GREY " + color.END + "Coloured Letters are letters which are not in the word at all!\n")
+print (f" - {Fore.BLACK} GREY {Fore.RESET} Coloured Letters are letters which are not in the word at all!\n")
 time.sleep(1)
 
 word_list = ["PASTE","TRUCK", "RINGS", "RIDGE", "KNIFE", "PAPER", "SPEAK", "LAMPS", "BRUSH", "PANTS", "CLOTH"]
@@ -32,14 +29,14 @@ for guess_count in range(max_guesses): # Game Loop until number of guesses reach
         try:
             guess = input(f"Guess a Word ({guess_count + 1}/{max_guesses}): ").upper()
             if len(guess) != 5:
-                print(color.RED + "Your guess must have exactly 5 letters. Try again.\n" + color.END)
+                print(f"{Fore.RED}Your guess must have exactly 5 letters. Try again.\n")
                 continue
             if not guess.isalpha():
-                print(color.RED + "Your guess must only contain alphabetic characters. Try again.\n" + color.END)
+                print(f"{Fore.RED} Your guess must only contain alphabetic characters. Try again.\n")
                 continue
             break
         except ValueError:
-            print(color.RED + "Invalid input. Please try again.\n" + color.END)
+            print(f"{Fore.RED} Invalid input. Please try again.\n")
 
     letterGuess = list(guess)
     marked_as_correct = [False] * 5
@@ -54,15 +51,15 @@ for guess_count in range(max_guesses): # Game Loop until number of guesses reach
 
     for i in range(5): # Marks each letter their co-ordinated color based on the word
         if marked_as_correct[i]:
-            output = output + color.GREEN + letterGuess[i] + color.END
+            output = output + Fore.GREEN + letterGuess[i] 
         elif letterGuess[i] in letters and not marked_as_correct[i]:
             if letterGuess[i] != letters[i] and not wrong_position[i]:
-                output = output + color.YELLOW + letterGuess[i] + color.END
+                output = output + Fore.YELLOW + letterGuess[i]
                 wrong_position[i] = True
             else:
-                output = output + color.GRAY + letterGuess[i] + color.END
+                output = output + Fore.BLACK + letterGuess[i] 
         else:
-            output = output + color.GRAY + letterGuess[i] + color.END
+            output = output + Fore.BLACK + letterGuess[i]
 
     guesses.append(output)
 
