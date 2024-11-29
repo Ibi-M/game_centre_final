@@ -1,12 +1,18 @@
+from colorama import *
+init(autoreset=True)
+
+class color:
+    UNDERLINE = '\033[4m'
+
 def turns(): # The Player Board
-    print((color.CYAN + color.BOLD), "   0 1 2", color.END)
-    print((color.GREEN + color.BOLD), "0", color.END, game[0][0], game[0][1], game[0][2])
-    print((color.GREEN + color.BOLD), "1", color.END, game[1][0], game[1][1], game[1][2])
-    print((color.GREEN + color.BOLD), "2", color.END, game[2][0], game[2][1], game[2][2])
+    print(f"{Fore.CYAN + Style.BRIGHT}  0 1 2")
+    print(f"{Fore.GREEN + Style.BRIGHT} 0 {Fore.RESET} {game[0][0] + game[0][1] + game[0][2]}")
+    print(f"{Fore.GREEN + Style.BRIGHT} 1 {Fore.RESET} {game[1][0] + game[1][1] + game[1][2]}")
+    print(f"{Fore.GREEN + Style.BRIGHT} 2 {Fore.RESET} {game[2][0] + game[2][1] + game[2][2]}")
     print ("-----------------------------------------")
 
 def player_move(player_number, symbol): # Gets a valid player input
-    print(color.YELLOW + color.UNDERLINE +"Player " + player_number + color.END + ": Input your input")
+    print(f"{Fore.YELLOW + color.UNDERLINE}Player {player_number + Fore.RESET} : Input your input")
     
     while True:
         try:
@@ -16,9 +22,9 @@ def player_move(player_number, symbol): # Gets a valid player input
                 game[row][column] = symbol
                 break
             else:
-                print(color.RED + "Invalid move! Try again.\n" + color.END)
+                print(f"{Fore.RED}Invalid move! Try again.\n")
         except ValueError:
-            print(color.RED + "Please enter valid integers.\n" + color.END)
+            print(f"{Fore.RED}Please enter valid integers.\n")
 
 def win(): # Checks all the winning combos
     global stop
@@ -87,20 +93,7 @@ def win(): # Checks all the winning combos
         stop = False
     return stop   
 
-class color: # Defines all colors used
-    PURPLE = '\033[95m'
-    CYAN = '\033[96m'
-    DARKCYAN = '\033[36m'
-    BLUE = '\033[94m'
-    GREEN = '\033[92m'
-    YELLOW = '\033[93m'
-    RED = '\033[91m'
-    BOLD = '\033[1m'
-    UNDERLINE = '\033[4m'
-    END = '\033[0m'
-
-print (color.BOLD + "You are going to play Noughts and Crosses with the Computer!" + color.END)
-print ("")
+print (f"{Style.BRIGHT}You are going to play Noughts and Crosses with the Computer!\n")
 
 game = [[".", ".", "."],
         [".", ".", "."],
@@ -113,8 +106,8 @@ stop = False
 turns()
 print("")
 
-p1 = color.RED + "O" + color.END
-p2 = color.BLUE + "X" + color.END
+p1 = Fore.RED + "O" + Fore.RESET
+p2 = Fore.BLUE + "X" + Fore.RESET
 
 while stop == False: # Displays the correct winning player 
     player_move("1", p1)
